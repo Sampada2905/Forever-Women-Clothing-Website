@@ -1,0 +1,42 @@
+#navlink{
+    color: rgb(23, 133, 230);
+    font-size: large;
+    font-weight:600;
+}
+#navlink:hover{
+    background-color:crimson;
+    color: white;
+    border-radius: 5px;
+    transition:ease 0.2s;
+}
+#btnsearch:hover{
+    background-color: crimson;
+    color: white;
+   
+}
+#btnsearch{
+    color: rgb(23, 133, 230);
+    font-size: large;
+    font-weight:600;
+
+}
+#btnsign:hover{
+    background-color: crimson;
+    color: white;
+   
+}
+#btnsign{
+    color:rgb(5, 7, 98);
+    font-size: large;
+    font-weight:600;
+
+}
+#navdropdown{
+    color: rgb(23, 133, 230);
+    font-size: large;
+    font-weight:600;
+}
+#navdropdown:hover{
+    background-color:crimson;
+    color: white;
+}
