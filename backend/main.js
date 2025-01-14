@@ -1,6 +1,7 @@
 var cn=require("./db")
 var users=require("./models/users")
 var admins=require("./models/admin")
+var contacts=require("./models/contact")
 var express=require("express")
 var parser=require("body-parser")
 var cors=require("cors")
@@ -28,6 +29,14 @@ app.get("/adminlogin/:em/:ps",(req,res)=>{
     var ps=req.params.ps
     admins.find({email:em,password:ps}).then((docs)=>{
         res.json(docs)
+    })
+})
+app.post("/createcontact",ue,(req,res)=>{
+    var rec={name:req.body.name,email:req.body.email,contact:req.body.contact,message:req.body.message}
+    contacts.create(rec).then(()=>{
+        res.json({"message":"Message Send Successfully"})
+    }).catch(()=>{
+        res.json({"message":"Problem Occured"})
     })
 })
 app.listen(6060,()=>{

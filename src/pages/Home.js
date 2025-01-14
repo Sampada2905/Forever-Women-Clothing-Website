@@ -41,13 +41,13 @@ export default function Home() {
       <h1 align='text-center' style={{ color: 'crimson' }}>The Latest Collection</h1>
       <h5 align='text-center' style={{ color: ' rgb(23, 133, 230)' }}>-our fresh arrivals-</h5>
       <div className='row'>
-        <div className='col-sm-5'><Link to='/lehengas'><img src='fa3.webp' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
-        <div className='col-sm-7'><Link to='/sarees'><img src='fa1.jpg' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
+        <div className='col-sm-5' id={styles.column}><Link to='/lehengas'><img src='fa3.webp' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
+        <div className='col-sm-7' id={styles.column}><Link to='/sarees'><img src='fa1.jpg' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
       </div>
       <br />
       <div className='row'>
-        <div className='col-sm-7'><Link to='/kurtasets'><img src='fa6.webp' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
-        <div className='col-sm-5'><Link to='/coords'><img src='fa7.jpeg' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
+        <div className='col-sm-7' id={styles.column}><Link to='/kurtasets'><img src='fa6.webp' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
+        <div className='col-sm-5' id={styles.column}><Link to='/coords'><img src='fa7.jpeg' alt='' style={{ height: '300px', width: '100%' }} /></Link></div>
       </div>
       <br /><br />
       <h1 align='text-center' style={{ color: 'crimson' }}>Our Bestsellers</h1>
@@ -124,17 +124,17 @@ export default function Home() {
       <br /><br />
       <h1 align='text-center' style={{ color: 'crimson' }}>Our Policies</h1>
       <div className='row'>
-        <div className='col-sm-4'> 
+        <div className='col-sm-4' id={styles.column}> 
           <img src='exchange_icon.png' alt='' style={{height:'50px'}}/>
           <h5 style={{ color: 'rgb(23, 133, 230)' }}>Easy Exchange Policy</h5>
           <h6 style={{color:'rgb(242, 18, 111)'}}>We offer hassle free exchange policy</h6>
         </div>
-        <div className='col-sm-4'>
+        <div className='col-sm-4' id={styles.column}>
         <img src='quality_icon.png' alt=''  style={{height:'50px'}}/>
         <h5 style={{ color: 'rgb(23, 133, 230)' }}>7 Days Return Policy</h5>
         <h6 style={{color:'rgb(242, 18, 111)'}}>We provide 7 days free return policy</h6>
         </div>
-        <div className='col-sm-4'>
+        <div className='col-sm-4'id={styles.column}>
         <img src='support_img.png' alt=''  style={{height:'50px'}}/>
         <h5 style={{ color: 'rgb(23, 133, 230)' }}>Best Customer Support</h5>
         <h6 style={{color:'rgb(242, 18, 111)'}}>We provide 24/7 customer support</h6>

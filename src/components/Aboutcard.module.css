@@ -1,0 +1,44 @@
+#card{
+    border:2px solid crimson;
+    color: rgb(6, 136, 250);
+    background-color:aliceblue;
+    height: 140px;
+}
+#card:hover{
+    border:2px solid rgb(6, 136, 250);
+    color:white;
+    background-color:crimson;
+    #cardtitle{
+      color:rgb(111, 174, 219);
+    }
+    
+}
+#cardtitle{
+  color: crimson;
+}
+
+@media screen and (max-width: 600px) {
+    #column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+#img{
+    border-radius:50%;
+    height: 200px;
+    width: 200px;
+    transition:all ease 0.2s;
+}
+#img:hover{
+    border:3px solid crimson ;
+    transform:scale(0.90);
+} 
+@media screen and (max-width: 800px) {
+    #img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  

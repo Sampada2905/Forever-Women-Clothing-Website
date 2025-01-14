@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div>
 
-      <footer className="text-center text-lg-start  text-muted" style={{backgroundColor:'rgb(196, 222, 245)'}}>
+      <footer className="text-center text-lg-start  text-muted" style={{backgroundColor:'rgb(127, 182, 230)'}}>
 
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 

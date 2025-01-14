@@ -20,7 +20,7 @@ export default function Login() {
     function handleSubmit(e) {
         e.preventDefault();
         axios.get('http://localhost:6060/userlogin/'+ email +"/"+ password ).then((response)=>{
-            if(response.data.length > 0){
+            if(response.data.length > 0){ 
                 alert("Login Successful")
                 localStorage.setItem("emailid",email)
                 localStorage.setItem("menutype","user")
