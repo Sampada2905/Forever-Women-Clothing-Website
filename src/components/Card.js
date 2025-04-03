@@ -1,18 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
-
-export default function Card() {
+import styles from './Card.module.css'
+export default function Card(props){
     return (
-        <div>
-            <div class="card">
-                <img src="bs1.avif" class="card-img-top" alt="..." style={{height:'250px'}} />
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">card's content.</p>
-                    <Link to="/" class="btn btn-primary">Go somewhere</Link>
-                </div>
-            </div>
+        <div className='img-thumbnail' id={styles.img} >
+             <img src={'http://localhost:6060/'+props.image}  alt="..." style={{width:'200px',height:'250px'}}/>
+             <br/>
+             <h6 style={{color:'crimson',textAlign:'left'}}>{props.name}</h6>
+             <h6 style={{color:'rgb(23, 133, 230)',textAlign:'left'}}>{props.price}</h6>
+             
         </div>
+       
     )
 }

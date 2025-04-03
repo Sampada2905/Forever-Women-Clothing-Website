@@ -1,4 +1,3 @@
-
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -11,7 +10,12 @@ import Kurtis from './pages/Kurtis';
 import Sarees from './pages/Sarees';
 import Coords from './pages/Coords';
 import Lehengas from './pages/Lehengas';
-
+import Addproducts from './pages/Addproducts';
+import Listproducts from './pages/Listproducts';
+import Product from './pages/Product';
+import Search from './pages/Search';
+import Shipping from './pages/Shipping';
+import Orderconfirmation from './pages/Orderconfirmation';
 
 
 function App() {
@@ -32,10 +36,13 @@ function App() {
       <Route path="sarees" element={<Sarees/>}/>
       <Route path="coords" element={<Coords/>}/>
       <Route path="lehengas" element={<Lehengas/>}/>
-    
-    
-    
-      </Route>
+      <Route path="addproducts" element={<Addproducts/>}/>
+      <Route path="listproducts" element={<Listproducts/>}/>
+      <Route path="product/:id" element={<Product/>}/>
+      <Route path="shipping" element={<Shipping/>}/>
+      <Route path="orderconfirmation" element={<Orderconfirmation/>}/>
+      <Route path="search/:term" element={<Search/>}/>
+      </Route>  
     </Routes>
     </BrowserRouter>
       

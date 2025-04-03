@@ -1,0 +1,14 @@
+@media screen and (min-width:800px){
+    #imagemagnifier{
+        width: 400px;
+        height: 500px;
+    }
+    
+  }
+@media screen and (max-width:500px){
+    #imagemagnifier{
+        width: 200px;
+        height: 250px;
+    }
+    
+  }

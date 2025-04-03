@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
 import styles from '../components/Card.module.css'
+import axios from 'axios'
 
 
 export default function Home() {
+  var [products, setProducts] = useState([])
+  function fetchproducts() {
+    axios.get("http://localhost:6060/getbestsellers").then((response) => {
+      setProducts(response.data)
+    })
+  }
+
+  useEffect(() => {
+    fetchproducts()
+
+  }, [])
   return (
     <div className='container-fluid'>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -52,92 +64,32 @@ export default function Home() {
       <br /><br />
       <h1 align='text-center' style={{ color: 'crimson' }}>Our Bestsellers</h1>
       <h5 align='text-center' style={{ color: ' rgb(23, 133, 230)' }}>Shop the Most Popular Styles</h5>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div className={styles.row}>
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
+      <div className='row'>
+              <div className='column' style={{ display: 'flex',flexWrap:'wrap',gap:'20px'}}>
+                {products.map((product, index) => {
+                  return (
+                  <Link className='text-decoration-none' to={`/product/${product.productid}`}><Card image={product.productimage} name={product.productname} price={product.productprice} /></Link>
+                  )
+                })}
               </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div className={styles.row}>
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div className={styles.row}>
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-
-              <div className={styles.column}>
-                <Card />
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
       <br /><br />
       <h1 align='text-center' style={{ color: 'crimson' }}>Our Policies</h1>
       <div className='row'>
-        <div className='col-sm-4' id={styles.column}> 
-          <img src='exchange_icon.png' alt='' style={{height:'50px'}}/>
+        <div className='col-sm-4' id={styles.column}>
+          <img src='exchange_icon.png' alt='' style={{ height: '50px' }} />
           <h5 style={{ color: 'rgb(23, 133, 230)' }}>Easy Exchange Policy</h5>
-          <h6 style={{color:'rgb(242, 18, 111)'}}>We offer hassle free exchange policy</h6>
+          <h6 style={{ color: 'rgb(242, 18, 111)' }}>We offer hassle free exchange policy</h6>
         </div>
         <div className='col-sm-4' id={styles.column}>
-        <img src='quality_icon.png' alt=''  style={{height:'50px'}}/>
-        <h5 style={{ color: 'rgb(23, 133, 230)' }}>7 Days Return Policy</h5>
-        <h6 style={{color:'rgb(242, 18, 111)'}}>We provide 7 days free return policy</h6>
+          <img src='quality_icon.png' alt='' style={{ height: '50px' }} />
+          <h5 style={{ color: 'rgb(23, 133, 230)' }}>7 Days Return Policy</h5>
+          <h6 style={{ color: 'rgb(242, 18, 111)' }}>We provide 7 days free return policy</h6>
         </div>
-        <div className='col-sm-4'id={styles.column}>
-        <img src='support_img.png' alt=''  style={{height:'50px'}}/>
-        <h5 style={{ color: 'rgb(23, 133, 230)' }}>Best Customer Support</h5>
-        <h6 style={{color:'rgb(242, 18, 111)'}}>We provide 24/7 customer support</h6>
+        <div className='col-sm-4' id={styles.column}>
+          <img src='support_img.png' alt='' style={{ height: '50px' }} />
+          <h5 style={{ color: 'rgb(23, 133, 230)' }}>Best Customer Support</h5>
+          <h6 style={{ color: 'rgb(242, 18, 111)' }}>We provide 24/7 customer support</h6>
         </div>
       </div>
       <br /><br />

@@ -6,10 +6,9 @@
 }
 #card:hover{
     border:2px solid rgb(6, 136, 250);
-    color:white;
-    background-color:crimson;
+    color:crimson;
     #cardtitle{
-      color:rgb(111, 174, 219);
+      color:rgb(6, 136, 250);
     }
     
 }
@@ -17,11 +16,12 @@
   color: crimson;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     #column {
       width: 100%;
       display: block;
       margin-bottom: 20px;
+      
     }
   }
 #img{

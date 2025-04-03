@@ -20,6 +20,13 @@
     font-weight:600;
 
 }
+#btndelete{
+    background-color: crimson;
+    color: white;
+    font-size:medium;
+    font-weight:600;
+
+}
 #btnsign:hover{
     background-color: crimson;
     color: white;

@@ -4,4 +4,5 @@ var cn=mongoose.connect("mongodb://localhost:27017/foreverclothingdb").then(()=>
 }).catch(()=>{
     console.log("problem occured")
 })
-module.exports=cn 
+module.exports=cn
+
