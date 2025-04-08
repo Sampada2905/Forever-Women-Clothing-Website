@@ -16,6 +16,8 @@ import Product from './pages/Product';
 import Search from './pages/Search';
 import Shipping from './pages/Shipping';
 import Orderconfirmation from './pages/Orderconfirmation';
+import Orderhistory from './pages/Orderhistory';
+import Vieworder from './pages/Vieworder';
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
       <Route path="shipping" element={<Shipping/>}/>
       <Route path="orderconfirmation" element={<Orderconfirmation/>}/>
       <Route path="search/:term" element={<Search/>}/>
+      <Route path="orderhistory" element={<Orderhistory/>}/>
+      <Route path="vieworders" element={<Vieworder/>}/>
       </Route>  
     </Routes>
     </BrowserRouter>

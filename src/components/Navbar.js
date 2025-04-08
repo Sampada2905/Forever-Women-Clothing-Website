@@ -125,6 +125,9 @@ export default function Navbar() {
                 <li className="nav-item">
                   <Link className="nav-link" id={styles.navlink} to='/contact'>Contact</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" id={styles.navlink} to='/orderhistory'>My Orders</Link>
+                </li>
                 <form className="d-flex" onSubmit={handleSubmit}>
                   <input className="form-control me-2" type="search" value={searchterm} onChange={(e)=>setSearchterm(e.target.value)} placeholder="Search" aria-label="Search" />
                   <button className="btn btn-outline-primary" id={styles.btnsearch} type="submit">Search</button>
@@ -164,7 +167,7 @@ export default function Navbar() {
                   <Link className="nav-link" id={styles.navlink} to='/listproducts'>List Products</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" id={styles.navlink} to='/contact'>Orders</Link>
+                  <Link className="nav-link" id={styles.navlink} to='/vieworders'>Manage Orders</Link>
                 </li>
               </ul>
               <ul className='navbar-nav'>

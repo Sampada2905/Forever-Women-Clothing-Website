@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Addresscard from '../components/Addresscard'
 
 export default function Orderconfirmation() {
     var em = localStorage.getItem("emailid")
@@ -29,7 +30,7 @@ export default function Orderconfirmation() {
                 <div className='col-sm-6' style={{ display: 'flex', flexWrap: 'wrap', gap: '25px' }}>
                         {orderdata.map((product, index) => {
                             return (
-                                <h5 style={{color:'crimson'}}>Orderno:{product._id}</h5>
+                                <h6 style={{color:'crimson'}}>Orderno:{product._id}</h6>
                             )
 
                         })
@@ -65,11 +66,11 @@ export default function Orderconfirmation() {
                                 )
                             })}
                             <tr>
-                                <td colSpan={5}>Total Amount</td>
+                                <td colSpan={5} style={{color:'rgb(6,136,250)', fontWeight: '600',fontSize:'20px'}}>Total Amount</td>
                                 <td>
                                     {orderdata.map((product, index) => {
                                         return (
-                                            <h5>{product.totalprice}</h5>
+                                            <h5 style={{color:'rgb(6,136,250)'}}>{product.totalprice}</h5>
                                         )
 
                                     })
@@ -78,15 +79,18 @@ export default function Orderconfirmation() {
                             </tr>
                         </tbody>
                     </table>
+                    <br/><br/>
                 </div>
                 <div className='col-sm-6'>
+                    <br/><br/>
                     {orderadd.map((data) => {
                         return (
-                            <h5>{data.name}</h5>
+                            <Addresscard name={data.name} address={data.address} address2={data.address2} country={data.country} state={data.state} city={data.city} zip={data.zip} mobile={data.mobile}/>
                             
                         )
                     })}
                 </div>
+                <br/><br/>
             </div>
 
         </div>

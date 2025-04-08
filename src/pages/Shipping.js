@@ -31,6 +31,11 @@ export default function Shipping() {
             window.location = '/orderconfirmation'
         })
     }
+    function handleoldadd(){
+         window.location = '/orderconfirmation'
+    }
+     
+
     return (
         <div>
             <br />
@@ -75,7 +80,7 @@ export default function Shipping() {
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button class="btn" type="submit" style={{backgroundColor:'rgb(23, 133, 230)',color:'white',fontSize:'large',fontWeight:'600'}}>Submit</button>
-                            <button class="btn" type="button"  style={{backgroundColor:'crimson',color:'white',fontSize:'large',fontWeight:'600'}}>Use my old address</button>
+                            <button class="btn" type="button"  style={{backgroundColor:'crimson',color:'white',fontSize:'large',fontWeight:'600'}} onClick={handleoldadd}>Use my old address</button>
                             <br />
                         </div>
                     </form>

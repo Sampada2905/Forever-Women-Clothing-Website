@@ -24,8 +24,9 @@ export default function Addproducts() {
         fd.append("bestseller",bestseller)
         axios.post("http://localhost:6060/productupload",fd,{headers:{'Content-Type':'multipart/form-data'}}).then((response)=>{
             alert(response.data["message"])
+            window.location.reload();
         })
-        window.location.reload();
+        
     }
     function handleChange(e){
         const{value,checked}=e.target

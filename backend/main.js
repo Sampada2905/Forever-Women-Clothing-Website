@@ -74,6 +74,12 @@ app.get("/orderconfirmation/:em/:total",(req,res)=>{
     })
     
 })
+app.get("/getorderhistory/:em",(req,res)=>{
+    orders.find({email:req.params.em}).then((docs)=>{
+        res.json(docs)
+    })
+    
+})
 
 app.post("/shippingaddress",ue,(req,res)=>{
     var rec={email:req.body.email,name:req.body.name,mobile:req.body.mobile,address:req.body.address,address2:req.body.address2,country:req.body.country,city:req.body.city,state:req.body.state,zip:req.body.zip}

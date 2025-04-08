@@ -16,6 +16,11 @@ var orderSchema=new mongoose.Schema({
     date: {
         type:Date,
         required: true,
+    },
+    status: {
+        type: String,
+        enum: ['Order Placed', 'Packing', 'Shipped', 'Out for Delivery','Delivered'],
+        default: 'Order Placed'
     }
 
 })
