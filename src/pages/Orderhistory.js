@@ -10,7 +10,7 @@ export default function Orderhistory() {
             setOrderdata(response.data)
         })
     }
-    console.log(orderdata)
+   
     useEffect(() => {
         getorderdata()
         // eslint-disable-next-line

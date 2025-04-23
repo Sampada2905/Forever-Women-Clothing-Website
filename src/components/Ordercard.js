@@ -3,7 +3,7 @@ import React from 'react'
 export default function Ordercard(props) {
     return (
         <div className='container'>
-            <div className="card mb-3" style={{ marginLeft: '50px' }}>
+            <div className="card mb-3 border-primary" style={{ marginLeft: '50px' }}>
                 <h6 style={{ textAlign: 'left', color: 'rgb(6,136,250)' }}>Order No:-{props.orderno}</h6>
                 <div className="row">
                     <div className="col-sm-2">

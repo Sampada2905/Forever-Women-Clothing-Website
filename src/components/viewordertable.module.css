@@ -1,0 +1,9 @@
+#dropdown{
+    color: rgb(23, 133, 230);
+    font-size: medium;
+    font-weight:600;
+}
+#dropdown:hover{
+    background-color:crimson;
+    color: white;
+}

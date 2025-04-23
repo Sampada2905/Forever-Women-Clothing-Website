@@ -19,7 +19,6 @@ import Orderconfirmation from './pages/Orderconfirmation';
 import Orderhistory from './pages/Orderhistory';
 import Vieworder from './pages/Vieworder';
 
-
 function App() {
   return (
     <div className="App">

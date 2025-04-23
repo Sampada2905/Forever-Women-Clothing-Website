@@ -78,7 +78,21 @@ app.get("/getorderhistory/:em",(req,res)=>{
     orders.find({email:req.params.em}).then((docs)=>{
         res.json(docs)
     })
-    
+})
+
+app.get("/vieworders",(req,res)=>{
+    orders.find({}).then((docs)=>{
+        res.json(docs)
+    })
+})
+
+app.put("/orderstatus/:oi", ue, (req, res) => {
+    var rec = {
+        _id: req.params.oi
+    }
+    orders.updateOne(rec, { status: req.body.status }).then(() => {
+        res.json({ "message": "Status updated" })
+    })
 })
 
 app.post("/shippingaddress",ue,(req,res)=>{
