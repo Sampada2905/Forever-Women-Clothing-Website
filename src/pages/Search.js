@@ -25,7 +25,7 @@ export default function Search() {
 
   return (
     <div className='container'>
-      <h1>Search page:{term}</h1>
+      <br/><br/>
       <div className='row'>
         <div className='col-sm-2'></div>
         <div className='col-sm-10' style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>

@@ -26,7 +26,7 @@ export default function Adminlogin() {
                 window.location="/"
             }
             else
-               alert("problem occured")  
+               alert("Invalid email or password")  
         })
         
 }

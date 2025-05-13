@@ -1,33 +1,51 @@
 import React, { useEffect, useState } from 'react'
 import Productcard from '../components/Productcard'
+import styles from '../components/Navbar.module.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 export default function Lehengas() {
   var [products, setProducts] = useState([])
+  var [productsubcategory, setProductsubcategory] = useState('')
+
   function fetchproducts() {
-    axios.get("http://localhost:6060/getproducts/lehengas").then((response) => {
-      setProducts(response.data)
-    })
+    if (productsubcategory === "allsubcategory") {
+      axios.get("http://localhost:6060/getproducts/lehengas").then((response) => {
+        setProducts(response.data)
+      })
+    }
+    else {
+      axios.get("http://localhost:6060/getproducts/lehengas/" + productsubcategory).then((response) => {
+        setProducts(response.data)
+      })
+    }
   }
   useEffect(() => {
     fetchproducts()
 
-  }, [])
+  })
   return (
     <div>
-      <h1 style={{color:'crimson'}}>Lehengas</h1>
+      <h1 style={{ color: 'crimson' }}>Lehengas</h1>
       <div className='row'>
-        <div className='col-sm-2'></div>
-        <div className='col-sm-10' style={{ display: 'flex',flexWrap:'wrap',gap:'35px'}}>
+        <div className='col-sm-2'>
+          <select className="form-select" aria-label="Default select example" name='subcategory' style={{ color: 'crimson', fontSize: 'large', fontWeight: '600' }} value={productsubcategory} onChange={(e) => setProductsubcategory(e.target.value)}>
+            <option value="allsubcategory" id={styles.navlink}>All Subcategories</option>
+            <option value="festive" id={styles.navlink}>Festive</option>
+            <option value="cotton" id={styles.navlink}>Cotton</option>
+            <option value="silk" id={styles.navlink}>Silk</option>
+            <option value="party wear" id={styles.navlink}>Party Wear</option>
+          </select>
+        </div>
+        <div className='col-sm-10' style={{ display: 'flex', flexWrap: 'wrap', gap: '35px' }}>
           {products.map((product, index) => {
             return (
-              <Link className='text-decoration-none' to={`/product/${product.productid}`}><Productcard image={product.productimage} name={product.productname} price={product.productprice} /></Link>
+              <Link className='text-decoration-none' to={`/product/${product._id}`}><Productcard image={product.productimage} name={product.productname} price={product.productprice} /></Link>
             )
           })}
         </div>
       </div>
-      <br/><br/>
+      <br /><br />
     </div>
   )
 }

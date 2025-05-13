@@ -64,11 +64,11 @@ export default function Home() {
       <br /><br />
       <h1 align='text-center' style={{ color: 'crimson' }}>Our Bestsellers</h1>
       <h5 align='text-center' style={{ color: ' rgb(23, 133, 230)' }}>Shop the Most Popular Styles</h5>
-      <div className='row'>
+      <div className='row' style={{marginLeft:'80px'}}>
               <div className='column' style={{ display: 'flex',flexWrap:'wrap',gap:'20px'}}>
                 {products.map((product, index) => {
                   return (
-                  <Link className='text-decoration-none' to={`/product/${product.productid}`}><Card image={product.productimage} name={product.productname} price={product.productprice} /></Link>
+                  <Link className='text-decoration-none' to={`/product/${product._id}`}><Card image={product.productimage} name={product.productname} price={product.productprice} /></Link>
                   )
                 })}
               </div>
